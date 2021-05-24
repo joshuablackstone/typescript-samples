@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JQuery in Typescript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body ng-app="app">
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Courses List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table-responsive">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2">Type to Search</label>
+                        <div class="col-md-10">
+                            <input type="search" name="filterCourses" id="filterCourses" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Course Name</th>
+                            <th>Author</th>
+                            <th>Row Index</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coursesList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../models/IAuthor.js"></script>
+    <script src="../models/ICourse.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sample ToDos Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="ToDosCtlr">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>ToDo List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form name="frmAddToDo" class="form-horizontal" role="form" ng-submit="addToDo(frmAddToDo)" novalidate>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">
+                        Title
+                        <span class="text-danger"
+                              ng-if="frmAddToDo.Title.$error.required">
+                            *
+                        </span>
+                    </label>
+                    <div class="col-md-10">
+                        <input type="text" name="Title" ng-model="model.Title" class="form-control" ng-required="true" />
+                        <span class="error-message" ng-show="!frmAddToDo.Title.$valid && frmAddToDo.$submitted">
+                            <span ng-show="frmAddToDo.Title.$error.required">Title is required.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary" value="Add" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="table-responsive" ng-if="todos.length > 0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Complete</th>
+                            <th>Last Updated</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="todo in todos">
+                        <tr>
+                            <td>{{todo.Title}}</td>
+                            <td>{{todo.Complete ? 'Yes' : 'No'}}</td>
+                            <td>{{todo.LastUpdated | date: 'MM/dd/yyyy HH:mm:ss a'}}</td>
+                            <td>
+                                <button type="button" class="btn btn-danger" ng-click="removeToDo(todo)">Delete</button>
+                                <button type="button" class="btn btn-info" ng-click="markToDoComplete(todo)">Mark Complete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../../../Scripts/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="models/IToDo.js"></script>
+    <script src="controllers/ToDos.Controller..js"></script>
+</body>
+</html>

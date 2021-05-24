@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Typescript Samples</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+    <!--Great Course in TypeScript: https://app.pluralsight.com/library/courses/typescript-in-depth/table-of-contents-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Link to Api Sample calls: <a href="http://pluralsightcourseviewer.azurewebsites.net/" target="_blank">Sample Api</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Spread Operator</h4>
+                <div id="spreads"></div>
+            </div>
+            <div class="col-md-4">
+                <h4>Product Types Enum</h4>
+                <div id="productTypes"></div>
+            </div>
+            <div class="col-md-4">
+                <h4>Policy Status Enum</h4>
+                <div id="policyStatuses"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Authors</h4>
+                <div id="authors">-- Loading Authors --</div>
+            </div>
+            <div class="col-md-4">
+                <h4>Courses</h4>
+                <div id="courses">-- Loading Courses --</div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Typescript Examples</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="App/angular/index.html">AngularJS Example Using TypeScript</a></li>
+                            <li class="list-group-item"><a href="App/angular/todos.html">AngularJS ToDos List Example Using TypeScript</a></li>
+                            <li class="list-group-item"><a href="App/jquery/index.html">JQuery Example Using TypeScript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="App/enums/ProductTypeEnum.js"></script>
+    <script src="App/enums/PolicyStatusEnum.js"></script>
+    <script src="App/models/IAuthor.js"></script>
+    <script src="App/models/ICourse.js"></script>
+    <script src="App/models/IGenericValue.js"></script>
+    <script src="App/samples.js"></script>
+</body>
+</html>
